@@ -2,9 +2,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Atribute"
+                    android:id="@+id/character_atribute_label"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Level"
+                    android:id="@+id/character_atribute_label_val"
+                    android:layout_column="1"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Misc"
+                    android:id="@+id/character_atribute_label_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bonus"
+                    android:id="@+id/character_atribute_label_bonus"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+            </TableRow>
+
 
             <TableRow
                 android:layout_width="match_parent"
@@ -34,9 +81,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:id="@+id/character_str_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="+2"
                     android:id="@+id/character_str_bonus"
-                    android:layout_column="2"
+                    android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
@@ -69,9 +126,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:id="@+id/character_dex_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="+3"
                     android:id="@+id/character_dex_bonus"
-                    android:layout_column="2"
+                    android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -104,9 +171,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:id="@+id/character_con_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="+1"
                     android:id="@+id/character_con_bonus"
-                    android:layout_column="2"
+                    android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -135,13 +212,21 @@
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:id="@+id/character_int_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
                     android:id="@+id/character_int_bonus"
-                    android:layout_column="2"
+                    android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -174,9 +259,19 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:id="@+id/character_wis_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="-1"
                     android:id="@+id/character_wis_bonus"
-                    android:layout_column="2"
+                    android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
@@ -208,168 +303,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="+0"
+                    android:id="@+id/character_cha_misc"
+                    android:layout_column="2"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="-1"
                     android:id="@+id/character_cha_bonus"
-                    android:layout_column="2"
+                    android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingLeft="10dp">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="HP"
-                    android:id="@+id/hp_label"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentStart="true"
-                    android:paddingRight="5dp"
-                    android:layout_gravity="right" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="___"
-                    android:id="@+id/hp_current"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/hp_label" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="/23"
-                    android:id="@+id/hp_max"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/hp_current"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="hitdie d10"
-                    android:id="@+id/hit_die"
-                    android:layout_alignParentTop="true"
-                    android:layout_toEndOf="@+id/hp_current" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="AC"
-                    android:id="@+id/ac_label"
-                    android:layout_gravity="right" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingTop="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Fortitude"
-                    android:id="@+id/fort_label"
-                    android:paddingRight="5dp"
-                    android:layout_gravity="right" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="3"
-                    android:id="@+id/base_fortitude"
-                    android:paddingLeft="5dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="+ STR"
-                    android:id="@+id/fort_ability_mod"
-                    android:layout_column="2" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Reflex"
-                    android:id="@+id/reflex_label"
-                    android:paddingRight="5dp"
-                    android:layout_gravity="right" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="3"
-                    android:id="@+id/base_reflex"
-                    android:paddingLeft="5dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="+ DEX"
-                    android:id="@+id/reflex_ability_mod"
-                    android:layout_column="2" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Will"
-                    android:id="@+id/will_label"
-                    android:paddingRight="5dp"
-                    android:layout_gravity="right" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="0"
-                    android:id="@+id/base_will"
-                    android:paddingLeft="5dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="+ WIS"
-                    android:id="@+id/will_ability_mod" />
             </TableRow>
 
         </TableLayout>

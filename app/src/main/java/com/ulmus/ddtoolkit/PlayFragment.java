@@ -132,12 +132,11 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
             wisBonusView.setText(Integer.toString(character.getAbilities().getWisBonus()));
             chaBonusView.setText(Integer.toString(character.getAbilities().getChaBonus()));
 
-            PopupWindow characterStats = new PopupWindow(characterStatsView , 400,
-                    580, true);
-            characterStats.setContentView(characterStatsView);
+
+            PopupWindow characterStats = new PopupWindow(characterStatsView , 525,
+                    415, true);  //TODO calculate dimentions dynamically some how
             characterStats.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-           // characterStats.showAtLocation(characterStatsView, 0, 0, 120);
-            characterStats.showAsDropDown(v);
+            characterStats.showAsDropDown(v,0,0);
 
         }
     }
