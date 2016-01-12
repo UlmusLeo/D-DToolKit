@@ -22,6 +22,8 @@ import com.ulmus.ddtoolkit.structures.SkillList;
 
 import java.util.ArrayList;
 
+import static com.ulmus.ddtoolkit.DiceRollOverlay.*;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -163,17 +165,22 @@ public class SkillsFragment extends Fragment implements AdapterView.OnItemClickL
         public View getView(int i, View convertView, ViewGroup parent) {
             View rowView;
             Skill rowSkill = skills.getSkill(i);
-            if(convertView == null)
+            Button bonusView;
+            if(convertView == null){
                 rowView = inflater.inflate(R.layout.list_element_skills_list, parent, false);
-            else
+                bonusView = (Button) rowView.findViewById(R.id.skills_list_bonus);
+                bonusView.setOnClickListener(new DiceRollOverlay(D20_DIE));
+            }
+            else {
                 rowView = convertView;
+                bonusView = (Button) rowView.findViewById(R.id.skills_list_bonus);
+            }
 
             Button addRankButton = (Button) rowView.findViewById(R.id.skills_add_button);
             Button subRankButton = (Button) rowView.findViewById(R.id.skills_subtract_button);
 
 
             TextView nameView = (TextView) rowView.findViewById(R.id.skills_list_name);
-            Button bonusView = (Button) rowView.findViewById(R.id.skills_list_bonus);
 
             TextView inClassView = (TextView) rowView.findViewById(R.id.skills_list_cross_class);
             TextView trainedView = (TextView) rowView.findViewById(R.id.skills_list_trained);

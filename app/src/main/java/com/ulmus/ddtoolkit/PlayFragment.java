@@ -14,6 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
@@ -23,6 +24,7 @@ import com.ulmus.ddtoolkit.structures.DDCharacter;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.ulmus.ddtoolkit.DiceRollOverlay.*;
 import static com.ulmus.ddtoolkit.structures.Abilities.*;
 
 
@@ -89,8 +91,25 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
         showCharacterReflex(character.getReflexSave());
         showCharacterWill(character.getWillSave());
 
+        setupDice(playView);
         return playView;
 
+    }
+
+    private void setupDice(View parent){
+        ImageButton dieD4  = (ImageButton) parent.findViewById(R.id.dice_d4);
+        ImageButton dieD6  = (ImageButton) parent.findViewById(R.id.dice_d6);
+        ImageButton dieD8  = (ImageButton) parent.findViewById(R.id.dice_d8);
+        ImageButton dieD10 = (ImageButton) parent.findViewById(R.id.dice_d10);
+        ImageButton dieD12 = (ImageButton) parent.findViewById(R.id.dice_d12);
+        ImageButton dieD20 = (ImageButton) parent.findViewById(R.id.dice_d20);
+
+         dieD4.setOnClickListener(new DiceRollOverlay(D4_DIE));
+         dieD6.setOnClickListener(new DiceRollOverlay(D6_DIE));
+         dieD8.setOnClickListener(new DiceRollOverlay(D8_DIE));
+        dieD10.setOnClickListener(new DiceRollOverlay(D10_DIE));
+        dieD12.setOnClickListener(new DiceRollOverlay(D12_DIE));
+        dieD20.setOnClickListener(new DiceRollOverlay(D20_DIE));
     }
 
     protected class CharacterStatsShower implements View.OnClickListener {

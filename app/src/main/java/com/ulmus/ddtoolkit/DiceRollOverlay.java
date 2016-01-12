@@ -1,8 +1,17 @@
 package com.ulmus.ddtoolkit;
 
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.PopupWindow;
+import android.widget.Space;
+import android.widget.TextView;
 
 /**
  * This is a class that creates a overlay as a result of a button press of a dice
@@ -25,14 +34,76 @@ public class DiceRollOverlay implements OnClickListener{
     public static final int D6_DIE = 6;
     public static final int D4_DIE = 4;
 
-    int die_type;
+    int dieType;
+
+    public DiceRollOverlay(int dieType){
+        this.dieType = dieType;
+    }
+
+
     @Override
     public void onClick(View v) {
-        if(v.getClass().equals(Button.class)){
-            String buttonText = ((Button)v).getText().toString();
-            System.out.println("Button Text:"+buttonText);
+        Context context = v.getContext();
+        String bonusText = null;
+        if(v instanceof Button){
+            bonusText = ((Button)v).getText().toString();
+            System.out.println("Button Text:"+bonusText);
         }
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View diceView =  inflater.inflate(R.layout.popup_dice_roll, null,false);
 
+        final Button dieButton = (Button) diceView.findViewById(R.id.dice_roll_button);
+        TextView rollBonusView = (TextView) diceView.findViewById(R.id.dice_bonus_view);
+
+        dieButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                roll(dieButton,dieType);
+            }
+        });
+        if(bonusText!=null){
+            rollBonusView.setText(bonusText);
+        }
+        else{
+            rollBonusView.setVisibility(View.GONE);
+        }
+        switch(dieType) {
+            case D4_DIE:
+                dieButton.setBackground(ContextCompat.getDrawable(context, R.drawable.d4));
+                break;
+            case D6_DIE:
+                dieButton.setBackground(ContextCompat.getDrawable(context, R.drawable.d6));
+                break;
+            case D8_DIE:
+                dieButton.setBackground(ContextCompat.getDrawable(context, R.drawable.d8));
+                break;
+            case D10_DIE:
+                dieButton.setBackground(ContextCompat.getDrawable(context, R.drawable.d10));
+                break;
+            case D12_DIE:
+                dieButton.setBackground(ContextCompat.getDrawable(context, R.drawable.d12));
+                break;
+            case D20_DIE:
+                dieButton.setBackground(ContextCompat.getDrawable(context, R.drawable.d20));
+                break;
+
+        }
+        rollBonusView.measure(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        rollBonusView.setBackground(new ColorDrawable(Color.WHITE));
+
+        int width=180 + (bonusText!=null ? rollBonusView.getMeasuredWidth() + 10:0) ;
+        int height=180;
+        PopupWindow characterStats = new PopupWindow(diceView , width,
+                height, true);  //TODO calculate dimentions dynamically some how
+        characterStats.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        characterStats.showAsDropDown(v, 0, 0);
+        roll(dieButton,dieType);
 
     }
+    private static void roll(Button button,int type){
+        int result = (int)(Math.random()*type)+1;
+        button.setText(Integer.toString(result));
+    }
+
+
 }
