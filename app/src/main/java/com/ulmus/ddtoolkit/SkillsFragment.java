@@ -173,7 +173,7 @@ public class SkillsFragment extends Fragment implements AdapterView.OnItemClickL
 
 
             TextView nameView = (TextView) rowView.findViewById(R.id.skills_list_name);
-            TextView bonusView = (TextView) rowView.findViewById(R.id.skills_list_bonus);
+            Button bonusView = (Button) rowView.findViewById(R.id.skills_list_bonus);
 
             TextView inClassView = (TextView) rowView.findViewById(R.id.skills_list_cross_class);
             TextView trainedView = (TextView) rowView.findViewById(R.id.skills_list_trained);
@@ -186,11 +186,10 @@ public class SkillsFragment extends Fragment implements AdapterView.OnItemClickL
 
             nameView.setText(rowSkill.getName());
             bonusView.setText(rowSkill.getBonusToString(character.getAbilities()));
+
             otherBonusView.setText(rowSkill.getOtherModifierToString());
-
-
-
             rankView.setText(rowSkill.getRankToString());
+
             String abilityTypeViewString = " + "+rowSkill.getAbilityTypeToString();
             abilityTypeView.setText(abilityTypeViewString);
 
