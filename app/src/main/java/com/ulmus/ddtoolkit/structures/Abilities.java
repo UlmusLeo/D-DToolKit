@@ -4,6 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 /**
+ * This class is a holder class for a character's abilities.
+ * It also does some computation of bonus for each ability
+ *
  * Created by Jake on 12/18/15.
  */
 public class Abilities implements Parcelable {
@@ -14,6 +17,11 @@ public class Abilities implements Parcelable {
     public static final int INT = 4;
     public static final int WIS = 5;
     public static final int CHA = 6;
+
+    private int strVal,dexVal,conVal,intVal,wisVal,chaVal;
+    private int strMisc,dexMisc,conMisc,intMisc,wisMisc,chaMisc;
+
+
 
     public static String getAbilityString(int ability){
         switch(ability){
@@ -33,7 +41,6 @@ public class Abilities implements Parcelable {
                 return "UNKNOWN";
         }
     }
-    private int strVal,dexVal,conVal,intVal,wisVal,chaVal;
 
     public Abilities(int strVal, int dexVal, int conVal, int intVal, int wisVal, int chaVal){
         this.strVal = strVal;
@@ -51,6 +58,13 @@ public class Abilities implements Parcelable {
         intVal = in.readInt();
         wisVal = in.readInt();
         chaVal = in.readInt();
+
+        strMisc = in.readInt();
+        dexMisc = in.readInt();
+        conMisc = in.readInt();
+        intMisc = in.readInt();
+        wisMisc = in.readInt();
+        chaMisc = in.readInt();
     }
 
     public static final Creator<Abilities> CREATOR = new Creator<Abilities>() {
@@ -88,84 +102,128 @@ public class Abilities implements Parcelable {
         }
         return 0;
     }
+
     public int getStrVal() {
         return strVal;
-    }
-
-    public void setStrVal(int strVal) {
-        this.strVal = strVal;
     }
 
     public int getDexVal() {
         return dexVal;
     }
 
-    public void setDexVal(int dexVal) {
-        this.dexVal = dexVal;
-    }
-
     public int getConVal() {
         return conVal;
-    }
-
-    public void setConVal(int conVal) {
-        this.conVal = conVal;
     }
 
     public int getIntVal() {
         return intVal;
     }
 
-    public void setIntVal(int intVal) {
-        this.intVal = intVal;
-    }
-
     public int getWisVal() {
         return wisVal;
-    }
-
-    public void setWisVal(int wisVal) {
-        this.wisVal = wisVal;
     }
 
     public int getChaVal() {
         return chaVal;
     }
 
-    public void setChaVal(int chaVal) {
-        this.chaVal = chaVal;
+    public int getStrMisc() {
+        return strMisc;
+    }
+
+    public int getDexMisc() {
+        return dexMisc;
+    }
+
+    public int getConMisc() {
+        return conMisc;
+    }
+
+    public int getIntMisc() {
+        return intMisc;
+    }
+
+    public int getWisMisc() {
+        return wisMisc;
+    }
+
+    public int getChaMisc() {
+        return chaMisc;
     }
 
     public int getStrBonus() {
         return calculateBonus(strVal);
     }
 
-
     public int getDexBonus() {
         return calculateBonus(dexVal);
     }
-
 
     public int getIntBonus() {
         return calculateBonus(intVal);
     }
 
-
     public int getConBonus() {
         return calculateBonus(conVal);
     }
-
-
 
     public int getWisBonus() {
         return calculateBonus(wisVal);
     }
 
-
     public int getChaBonus() {
         return calculateBonus(chaVal);
     }
 
+
+
+    public void setStrVal(int strVal) {
+        this.strVal = strVal;
+    }
+
+    public void setDexVal(int dexVal) {
+        this.dexVal = dexVal;
+    }
+
+    public void setConVal(int conVal) {
+        this.conVal = conVal;
+    }
+
+    public void setIntVal(int intVal) {
+        this.intVal = intVal;
+    }
+
+    public void setWisVal(int wisVal) {
+        this.wisVal = wisVal;
+    }
+
+    public void setChaVal(int chaVal) {
+        this.chaVal = chaVal;
+    }
+
+    public void setStrMisc(int strMisc) {
+        this.strMisc = strMisc;
+    }
+
+    public void setDexMisc(int dexMisc) {
+        this.dexMisc = dexMisc;
+    }
+
+    public void setConMisc(int conMisc) {
+        this.conMisc = conMisc;
+    }
+
+    public void setIntMisc(int intMisc) {
+        this.intMisc = intMisc;
+    }
+
+    public void setWisMisc(int wisMisc) {
+        this.wisMisc = wisMisc;
+    }
+
+    public void setChaMisc(int chaMisc) {
+        this.chaMisc = chaMisc;
+    }
 
     @Override
     public int describeContents() {
@@ -180,5 +238,12 @@ public class Abilities implements Parcelable {
         parcel.writeInt(intVal);
         parcel.writeInt(wisVal);
         parcel.writeInt(chaVal);
+
+        parcel.writeInt(strMisc);
+        parcel.writeInt(dexMisc);
+        parcel.writeInt(conMisc);
+        parcel.writeInt(intMisc);
+        parcel.writeInt(wisMisc);
+        parcel.writeInt(chaMisc);
     }
 }
