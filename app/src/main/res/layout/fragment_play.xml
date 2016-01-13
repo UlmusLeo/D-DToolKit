@@ -112,31 +112,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/relativeLayout">
+        <!--TODO make a better visual language for draggable HP -->
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="HP 23/23"
                 android:id="@+id/character_hp"
                 android:gravity="center"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true" />
+                android:layout_centerInParent="true" />
 
             <TextView
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="AC 13"
                 android:id="@+id/character_armor_class"
                 android:gravity="center"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
-                android:layout_toRightOf="@+id/character_hp" />
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                 />
 
 
         </RelativeLayout>

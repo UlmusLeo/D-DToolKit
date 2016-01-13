@@ -6,81 +6,63 @@
     <!-- TODO adjust table formating so text in on the right side? middle?-->
     <!-- TODO Move the character level into this display?-->
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Level: 3"
-        android:id="@+id/character_level"
-        android:textSize="@dimen/abc_text_size_small_material"
-        android:layout_below="@+id/character_name"
-        android:paddingLeft="5dp"
-        android:paddingRight="10dp" />
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Class: Specialist"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/character_class"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level: 3"
+            android:id="@+id/character_level"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="Level Up"
+            android:id="@+id/character_levelup_button"
+            />
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="90dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_marginLeft="5dp"
-            android:text="Fortitude 3"
-            android:id="@+id/character_fort_save"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_below="@+id/character_hp"
-            android:layout_alignParentStart="true" />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" >
-        </View>
-
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Reflex 3"
-            android:id="@+id/character_refl_save"
-            android:gravity="center"
-
-            />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" >
-        </View>
-
-        <TextView
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Will 0"
-            android:id="@+id/character_will_save"
-            android:gravity="center"
-             />
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:layout_weight="1" >
-        </View>
-    </LinearLayout>
-
     <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp">
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp">
+                android:paddingRight="2dp"
+                android:paddingLeft="2dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:background="#CCC">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Atribute"
+                    android:text="Ability"
                     android:id="@+id/character_atribute_label"
-                    android:textSize="@dimen/abc_text_size_medium_material"
+                    android:textSize="@dimen/abc_text_size_small_material"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
 
@@ -90,9 +72,9 @@
                     android:text="Level"
                     android:id="@+id/character_atribute_label_val"
                     android:layout_column="1"
-                    android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp" />
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,8 +82,8 @@
                     android:text="Misc"
                     android:id="@+id/character_atribute_label_misc"
                     android:layout_column="2"
-                    android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="10dp"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
 
                 <TextView
@@ -110,8 +92,8 @@
                     android:text="Bonus"
                     android:id="@+id/character_atribute_label_bonus"
                     android:layout_column="2"
-                    android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="10dp"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    android:paddingLeft="5dp"
                     android:paddingRight="5dp" />
             </TableRow>
 
@@ -119,7 +101,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp">
+                android:padding="2dp"
+                android:background="#EEE">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -167,7 +150,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp" >
+                android:padding="2dp"
+                android:background="#DDD">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -214,7 +198,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp">
+                android:padding="2dp"
+                android:background="#EEE">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -261,7 +246,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp" >
+                android:padding="2dp"
+                android:background="#DDD">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -306,7 +292,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp">
+                android:padding="2dp"
+                android:background="#EEE">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -352,7 +339,8 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="5dp">
+                android:padding="2dp"
+                android:background="#DDD">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -397,4 +385,70 @@
             </TableRow>
 
         </TableLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="15sp"
+                android:text="Fortitude"
+                android:id="@+id/character_fort_save_label"
+                android:layout_gravity="center"
+                android:layout_alignParentStart="true" />
+
+            <Button
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:text="+3"
+                android:background="@drawable/d20"
+                android:layout_gravity="center"
+                android:id="@+id/character_fort_save_buton" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="15sp"
+                android:text="Reflex "
+                android:id="@+id/character_refl_save_label"
+                android:layout_gravity="center"
+
+                />
+
+            <Button
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:text="+3"
+                android:background="@drawable/d20"
+                android:layout_gravity="center"
+                android:id="@+id/character_refl_save_button" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="15sp"
+                android:text="Will "
+                android:id="@+id/character_will_save_label"
+                android:layout_gravity="center"
+                />
+
+            <Button
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:text="+0"
+                android:background="@drawable/d20"
+                android:layout_gravity="center"
+                android:id="@+id/character_will_save_button" />
+
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

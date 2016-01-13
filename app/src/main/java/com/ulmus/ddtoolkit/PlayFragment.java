@@ -122,14 +122,14 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
             characterStatsView =  inflater.inflate(R.layout.popup_character_stats, null,false);
 
             TextView characterLvl = (TextView) characterStatsView.findViewById(R.id.character_level);
-            TextView characterFort = (TextView) characterStatsView.findViewById(R.id.character_fort_save);
-            TextView characterRefl = (TextView) characterStatsView.findViewById(R.id.character_refl_save);
-            TextView characterWill = (TextView) characterStatsView.findViewById(R.id.character_will_save);
+            TextView characterFort = (TextView) characterStatsView.findViewById(R.id.character_fort_save_buton);
+            TextView characterRefl = (TextView) characterStatsView.findViewById(R.id.character_refl_save_button);
+            TextView characterWill = (TextView) characterStatsView.findViewById(R.id.character_will_save_button);
 
             characterLvl.setText("Level "+character.getLevel());
-            characterFort.setText("Fortitude "+character.getFortSave());
-            characterRefl.setText("Reflex "+character.getReflexSave());
-            characterWill.setText("Will "+character.getWillSave());
+            characterFort.setText("+"+character.getFortSave());
+            characterRefl.setText("+"+character.getReflexSave());
+            characterWill.setText("+"+character.getWillSave());
 
 
 
@@ -162,8 +162,8 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
             chaBonusView.setText(Integer.toString(character.getAbilities().getChaBonus()));
 
 
-            PopupWindow characterStats = new PopupWindow(characterStatsView , 525,
-                    435, true);  //TODO calculate dimentions dynamically some how
+            PopupWindow characterStats = new PopupWindow(characterStatsView , 530,
+                    485, true);  //TODO calculate dimentions dynamically some how
             characterStats.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
             characterStats.showAsDropDown(v,0,0);
 
