@@ -84,12 +84,9 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
         characterName.setOnClickListener(new CharacterStatsShower(this.getContext()));
         //fill in all the fields
         showCharacterName(character.getName());
-        showCharacterLevel(character.getLevel());
         showCharacterAC(character.getArmorClass(0));
         showCharacterHP(character.getHPCurrent(), character.getHpTotal());
-        showCharacterFort(character.getFortSave());
-        showCharacterReflex(character.getReflexSave());
-        showCharacterWill(character.getWillSave());
+
 
         setupDice(playView);
         return playView;
@@ -123,6 +120,19 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
         public void onClick(View v) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             characterStatsView =  inflater.inflate(R.layout.popup_character_stats, null,false);
+
+            TextView characterLvl = (TextView) characterStatsView.findViewById(R.id.character_level);
+            TextView characterFort = (TextView) characterStatsView.findViewById(R.id.character_fort_save);
+            TextView characterRefl = (TextView) characterStatsView.findViewById(R.id.character_refl_save);
+            TextView characterWill = (TextView) characterStatsView.findViewById(R.id.character_will_save);
+
+            characterLvl.setText("Level "+character.getLevel());
+            characterFort.setText("Fortitude "+character.getFortSave());
+            characterRefl.setText("Reflex "+character.getReflexSave());
+            characterWill.setText("Will "+character.getWillSave());
+
+
+
             TextView strView = (TextView) characterStatsView.findViewById(R.id.character_str_val);
             TextView dexView = (TextView) characterStatsView.findViewById(R.id.character_dex_val);
             TextView conView = (TextView) characterStatsView.findViewById(R.id.character_con_val);
@@ -153,7 +163,7 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
 
 
             PopupWindow characterStats = new PopupWindow(characterStatsView , 525,
-                    415, true);  //TODO calculate dimentions dynamically some how
+                    435, true);  //TODO calculate dimentions dynamically some how
             characterStats.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
             characterStats.showAsDropDown(v,0,0);
 
@@ -164,10 +174,7 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
         TextView characterName = (TextView) playView.findViewById(R.id.character_name);
         characterName.setText(name);
     }
-    private void showCharacterLevel(int lvl){
-        TextView characterLvl = (TextView) playView.findViewById(R.id.character_level);
-        characterLvl.setText("Level "+lvl);
-    }
+
     private void showCharacterHP(int current, int max){
         TextView characterHP = (TextView) playView.findViewById(R.id.character_hp);
         characterHP.setText("HP "+current+"/"+max);
@@ -176,18 +183,7 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
         TextView characterAC = (TextView) playView.findViewById(R.id.character_armor_class);
         characterAC.setText("AC "+ac);
     }
-    private void showCharacterFort(int fort){
-        TextView characterFort = (TextView) playView.findViewById(R.id.character_fort_save);
-        characterFort.setText("Fortitude "+fort);
-    }
-    private void showCharacterReflex(int reflex){
-        TextView characterRefl = (TextView) playView.findViewById(R.id.character_refl_save);
-        characterRefl.setText("Reflex "+reflex);
-    }
-    private void showCharacterWill(int will){
-        TextView characterWill = (TextView) playView.findViewById(R.id.character_will_save);
-        characterWill.setText("Will "+will);
-    }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
 

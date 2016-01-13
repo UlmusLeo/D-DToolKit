@@ -1,10 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="wrap_content"
+    android:orientation="vertical" android:layout_width="wrap_content"
     android:layout_height="wrap_content">
     <!-- TODO add a background to the table for readability-->
     <!-- TODO adjust table formating so text in on the right side? middle?-->
     <!-- TODO Move the character level into this display?-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Level: 3"
+        android:id="@+id/character_level"
+        android:textSize="@dimen/abc_text_size_small_material"
+        android:layout_below="@+id/character_name"
+        android:paddingLeft="5dp"
+        android:paddingRight="10dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginLeft="5dp"
+            android:text="Fortitude 3"
+            android:id="@+id/character_fort_save"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_below="@+id/character_hp"
+            android:layout_alignParentStart="true" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </View>
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Reflex 3"
+            android:id="@+id/character_refl_save"
+            android:gravity="center"
+
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </View>
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Will 0"
+            android:id="@+id/character_will_save"
+            android:gravity="center"
+             />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </View>
+    </LinearLayout>
 
     <TableLayout
             android:layout_width="wrap_content"
@@ -75,6 +135,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="15"
+                    android:gravity="right"
                     android:id="@+id/character_str_val"
                     android:layout_column="1"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -85,6 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
+                    android:gravity="center"
                     android:id="@+id/character_str_misc"
                     android:layout_column="2"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -120,16 +182,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="16"
+                    android:gravity="right"
                     android:id="@+id/character_dex_val"
                     android:layout_column="1"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
+                    android:gravity="center"
                     android:id="@+id/character_dex_misc"
                     android:layout_column="2"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -143,7 +207,7 @@
                     android:id="@+id/character_dex_bonus"
                     android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
             </TableRow>
 
@@ -165,16 +229,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="13"
+                    android:gravity="right"
                     android:id="@+id/character_con_val"
                     android:layout_column="1"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
+                    android:gravity="center"
                     android:id="@+id/character_con_misc"
                     android:layout_column="2"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -188,7 +254,7 @@
                     android:id="@+id/character_con_bonus"
                     android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
             </TableRow>
 
@@ -210,15 +276,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="11"
+                    android:gravity="right"
                     android:id="@+id/character_int_val"
                     android:layout_column="1"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="10dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
+                    android:gravity="center"
                     android:id="@+id/character_int_misc"
                     android:layout_column="2"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -231,7 +299,7 @@
                     android:id="@+id/character_int_bonus"
                     android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
             </TableRow>
 
@@ -253,16 +321,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9"
+                    android:gravity="right"
                     android:id="@+id/character_wis_val"
                     android:layout_column="1"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
+                    android:gravity="center"
                     android:id="@+id/character_wis_misc"
                     android:layout_column="2"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -276,7 +346,7 @@
                     android:id="@+id/character_wis_bonus"
                     android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
             </TableRow>
             <TableRow
@@ -297,16 +367,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="9"
+                    android:gravity="right"
                     android:id="@+id/character_cha_val"
                     android:layout_column="1"
                     android:textSize="@dimen/abc_text_size_medium_material"
                     android:paddingLeft="10dp"
-                    android:paddingRight="5dp" />
+                    android:paddingRight="10dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+0"
+                    android:gravity="center"
                     android:id="@+id/character_cha_misc"
                     android:layout_column="2"
                     android:textSize="@dimen/abc_text_size_medium_material"
@@ -320,7 +392,7 @@
                     android:id="@+id/character_cha_bonus"
                     android:layout_column="3"
                     android:textSize="@dimen/abc_text_size_medium_material"
-                    android:paddingLeft="5dp"
+                    android:paddingLeft="10dp"
                     android:paddingRight="5dp" />
             </TableRow>
 
