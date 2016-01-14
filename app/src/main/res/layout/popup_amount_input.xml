@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="36dp"
+                android:text="+"
+                android:id="@+id/number_plus_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="36dp"
+                android:text="-"
+                android:id="@+id/number_minus_button" />
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/number_value_field"
+            android:textSize="30sp"
+            android:text="+10" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="7"
+                android:id="@+id/number_7_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="8"
+                android:id="@+id/number_8_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="9"
+                android:id="@+id/number_9_button"
+                android:layout_gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal" >
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="4"
+                android:id="@+id/number_4_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="5"
+                android:id="@+id/number_5_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="6"
+                android:id="@+id/number_6_button"
+                android:layout_gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="1"
+                android:id="@+id/number_1_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="2"
+                android:id="@+id/number_2_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="3"
+                android:id="@+id/number_3_button"
+                android:layout_gravity="center_horizontal" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" >
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="Del"
+                android:textSize="12sp"
+                android:id="@+id/number_del_button"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="0"
+                android:id="@+id/number_0_button" />
+
+            <Button
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:text="Ent"
+                android:textSize="12sp"
+                android:id="@+id/number_ent_button"
+                android:layout_column="2" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

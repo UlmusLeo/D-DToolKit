@@ -88,6 +88,8 @@ public class PlayFragment extends Fragment implements SkillsFragment.OnFragmentI
         showCharacterHP(character.getHPCurrent(), character.getHpTotal());
 
 
+        TextView hpView = (TextView) playView.findViewById(R.id.character_hp);
+
         setupDice(playView);
         return playView;
 
